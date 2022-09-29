@@ -75,7 +75,7 @@ void employee::output_file_txt(FILE* file)
 	fprintf_s(file, "%d", num);
 	fprintf_s(file, " ");
 	fprintf_s(file, "%s", &name);
-	fprintf_s(file, " ");
+	fprintf_s(file, "\n");
 	fprintf_s(file, "%f", hours);
 	fprintf_s(file, " ");
 }
@@ -83,7 +83,7 @@ void employee::output_file_txt(FILE* file)
 void employee::input_file_txt(FILE* file)
 {
 	fscanf_s(file, "%d", &num);
-	fscanf_s(file, "%s", &name);
+	fscanf_s(file, "%s", &name, 11);
 	fscanf_s(file, "%lf", &hours);
 }
 
@@ -105,7 +105,7 @@ employee& employee::operator = (employee& sourse)
 //comparator for qsort
 int compare_employee(const void* emp1, const void* emp2)
 {
-	return (((employee*)emp1)->num) - (((employee*)emp2)->num);
+	return (((const employee*)emp1)->num) - (((const employee*)emp2)->num);
 }
 
 

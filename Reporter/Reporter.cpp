@@ -27,6 +27,7 @@ int main(int argc, char* argv[])
 	if (error != 0)
 	{
 		printf("Error opening file");
+		return 0;
 	}
 
 	int emount = 0;
